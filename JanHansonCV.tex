@@ -1,0 +1,46 @@
+\documentclass[11pt, a4paper, roman]{moderncv}
+
+\moderncvstyle{classic}
+\moderncvcolor{blue} 
+\usepackage[scale=0.85]{geometry}
+\usepackage{lastpage}
+
+\newcommand{\cvreference}[7]{%
+    \textbf{#1}\newline% Name
+    \ifthenelse{\equal{#2}{}}{}{\addresssymbol~#2\newline}%
+    \ifthenelse{\equal{#3}{}}{}{#3\newline}%
+    \ifthenelse{\equal{#4}{}}{}{#4\newline}%
+    \ifthenelse{\equal{#5}{}}{}{#5\newline}%
+    \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{#6}\newline}%
+    \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
+
+\input{Sections/masthead.tex}
+\cfoot{\addressfont\itshape\textcolor{gray}{ \thepage\ of \pageref{LastPage}}}
+
+\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+
+\begin{document}
+\maketitle
+
+\section{Profile}
+\input{Sections/profile.tex}
+
+\section{Education}
+\input{sections/education.tex}
+
+\section{Technical Skills}
+\input{Sections/techSkills.tex}
+\pagebreak
+
+\section{Experience}
+\input{Sections/techSkills.tex}
+
+\section{References}
+\input{Sections/references.tex}
+
+%everything in the below 'if' block will not show up on the CV
+\iffalse
+
+\fi
+
+\end{document}
