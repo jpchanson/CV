@@ -1,7 +1,14 @@
-\documentclass[11pt, a4paper, roman]{moderncv}
-
-\moderncvstyle{classic}
+\documentclass[11pt, a4paper, roman, final]{moderncv}
+%\definecolor{color0}{rgb}{0,0,0} % main text color
+%\definecolor{color1}{rgb}{0.26,0.7,0.68}% main theme color
+%\definecolor{color2}{rgb}{0,0,0.63}
+%\colorlet{headTL}{orange}
+%\colorlet{headBR}{color1}
+%\colorlet{headtext}{white}
+%\colorlet{headhr}{color2}
 \moderncvcolor{blue} 
+\moderncvstyle{classic}
+
 \usepackage[scale=0.85]{geometry}
 \usepackage{lastpage}
 
@@ -15,9 +22,20 @@
     \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
 
 \input{Sections/masthead.tex}
+\nopagenumbers{}
 \cfoot{\addressfont\itshape\textcolor{gray}{ \thepage\ of \pageref{LastPage}}}
 
-\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+
+\@ifundefined{private}{
+  \newif\ifprivate
+  \privatefalse
+}{
+  \newif\ifprivate
+  \privatetrue
+}
+\makeatother
 
 \begin{document}
 \maketitle
@@ -26,14 +44,13 @@
 \input{Sections/profile.tex}
 
 \section{Education}
-\input{sections/education.tex}
+\input{Sections/education.tex}
 
 \section{Technical Skills}
 \input{Sections/techSkills.tex}
-\pagebreak
 
 \section{Experience}
-\input{Sections/techSkills.tex}
+\input{Sections/experience.tex}
 
 \section{References}
 \input{Sections/references.tex}
