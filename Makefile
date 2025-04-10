@@ -1,4 +1,5 @@
-LTXBin :=pdflatex
+#LTXBin :=pdflatex
+LTXBin :=xelatex
 LTXFlags := -file-line-error
 DOC := JanHansonCV.tex
 SECTIONS := Sections/*.tex
